@@ -1,0 +1,138 @@
+/* CV site — Felipe Ferreira dos Reis
+   Sem framework, sem build, sem fonte externa. Mobile-first, contraste alto. */
+
+:root {
+  --bg: #ffffff;
+  --ink: #12161c;
+  --muted: #55606d;
+  --line: #e2e8ef;
+  --accent: #0b5cad;
+  --accent-soft: #eef4fb;
+  --chip: #f2f5f9;
+  --radius: 10px;
+  --wrap: 46rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1116;
+    --ink: #eef2f7;
+    --muted: #9fb0c3;
+    --line: #232c38;
+    --accent: #6bb0ff;
+    --accent-soft: #16202c;
+    --chip: #1a232e;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 1.15rem; }
+
+/* top bar */
+.top {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 52px; }
+.top .name { font-weight: 700; font-size: .95rem; letter-spacing: -.01em; }
+.lang { display: flex; gap: .35rem; font-size: .85rem; }
+.lang a, .lang span {
+  padding: .28rem .6rem; border-radius: 999px; border: 1px solid var(--line);
+}
+.lang [aria-current="true"] { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+@media (prefers-color-scheme: dark) { .lang [aria-current="true"] { color: #08111c; } }
+
+/* hero */
+header.hero { padding: 2.6rem 0 1.4rem; }
+h1 { font-size: clamp(1.7rem, 5.2vw, 2.5rem); line-height: 1.12; margin: 0 0 .5rem; letter-spacing: -.02em; }
+.headline { font-size: clamp(1rem, 2.6vw, 1.15rem); color: var(--accent); font-weight: 600; margin: 0 0 .7rem; }
+.meta { color: var(--muted); font-size: .95rem; margin: 0 0 1.1rem; }
+.lede { font-size: 1.02rem; margin: 0 0 1.3rem; max-width: 40rem; }
+
+.actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.btn {
+  display: inline-block; padding: .62rem 1.05rem; border-radius: var(--radius);
+  border: 1px solid var(--accent); font-weight: 600; font-size: .95rem;
+}
+.btn.primary { background: var(--accent); color: #fff; }
+@media (prefers-color-scheme: dark) { .btn.primary { color: #08111c; } }
+.btn.ghost { background: transparent; }
+
+/* sections */
+section { padding: 1.8rem 0; border-top: 1px solid var(--line); }
+section:first-of-type { border-top: 0; }
+h2 {
+  font-size: .82rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 1rem; font-weight: 700;
+}
+h3 { font-size: 1.02rem; margin: 0; }
+
+p { margin: 0 0 .9rem; }
+
+/* projects */
+.projects { display: grid; gap: 1rem; }
+.card {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem 1.05rem; background: var(--bg);
+}
+.card h3 { margin-bottom: .3rem; }
+.card .problem { margin: .1rem 0 .6rem; }
+.card .links { display: flex; flex-wrap: wrap; gap: .8rem; font-size: .9rem; margin-top: .55rem; font-weight: 600; }
+
+.tags { display: flex; flex-wrap: wrap; gap: .35rem; margin: .2rem 0 0; padding: 0; list-style: none; }
+.tags li {
+  font: 500 .78rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--chip); color: var(--muted);
+  border-radius: 6px; padding: .3rem .45rem;
+}
+
+/* stack */
+.stack { display: grid; gap: .55rem; }
+.stack div { display: grid; grid-template-columns: 7.5rem 1fr; gap: .6rem; align-items: baseline; }
+.stack dt { color: var(--muted); font-size: .88rem; margin: 0; }
+.stack dd { margin: 0; font-size: .95rem; }
+
+/* experience */
+.job { padding: .2rem 0 1rem; }
+.job + .job { border-top: 1px dashed var(--line); padding-top: 1rem; }
+.job .head { display: flex; flex-wrap: wrap; gap: .2rem .8rem; align-items: baseline; justify-content: space-between; }
+.job .when { color: var(--muted); font-size: .88rem; white-space: nowrap; }
+.job .role { color: var(--muted); font-size: .93rem; margin: .1rem 0 .45rem; }
+.job ul { margin: .2rem 0 0; padding-left: 1.1rem; }
+.job li { margin-bottom: .3rem; }
+
+/* education */
+.edu p { margin: 0 0 .5rem; }
+.edu b { font-weight: 700; }
+
+/* contact */
+.contact ul { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: .35rem; }
+
+footer { border-top: 1px solid var(--line); padding: 1.4rem 0 2.2rem; color: var(--muted); font-size: .85rem; }
+
+@media (min-width: 40rem) {
+  .projects { grid-template-columns: 1fr 1fr; }
+  .projects .card.wide { grid-column: 1 / -1; }
+}
+
+@media print {
+  .top, .actions, .lang { display: none; }
+  body { font-size: 12px; }
+  section { break-inside: avoid; }
+}
