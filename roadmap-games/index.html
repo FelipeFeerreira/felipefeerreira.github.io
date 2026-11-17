@@ -3,58 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roadmap — de dev full stack a programador de jogos</title>
-<meta name="description" content="Trilha de 26 semanas: C++, Unreal 5, gameplay, portfólio publicado e candidatura em estúdios.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1117'/%3E%3Cpath d='M8 24V10h4v10h4V14h4v6h4v4z' fill='%2357c7ff'/%3E%3C/svg%3E">
+<title>Roadmap — de dev full stack a programador de jogo (26 semanas)</title>
+<meta name="description" content="Trilha de 26 semanas: C++, Unreal 5, gameplay, jogo publicado e candidatura. Cada semana com exercício e critério numérico.">
 <style>
   :root{
     --bg:#0d1117; --bg2:#11161f; --card:#161b22; --line:#22293a;
     --txt:#e6edf3; --dim:#98a4b3; --accent:#57c7ff; --accent2:#8b7cff;
-    --ok:#3fb950; --warn:#d29922;
-    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+    --ok:#3fb950; --warn:#d29922; --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--txt);
-    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
   a{color:var(--accent)}
-  header{position:sticky;top:0;z-index:20;background:rgba(13,17,23,.92);
-    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-  .hrow{display:flex;align-items:center;gap:16px;padding:12px 0}
-  .logo{font-weight:700;letter-spacing:-.02em}
+  code{font:13px var(--mono);background:#0f141c;border:1px solid var(--line);padding:1px 5px;border-radius:5px}
+  header{position:sticky;top:0;z-index:20;background:rgba(13,17,23,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .hrow{display:flex;align-items:center;gap:14px;padding:11px 0}
+  .logo{font-weight:700;letter-spacing:-.02em;white-space:nowrap}
   .logo span{color:var(--accent)}
-  .bar{flex:1;height:8px;background:#1c2230;border-radius:99px;overflow:hidden;min-width:80px}
+  .bar{flex:1;height:8px;background:#1c2230;border-radius:99px;overflow:hidden;min-width:60px}
   .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
-  .pct{font:600 13px var(--mono);color:var(--dim);min-width:96px;text-align:right}
-  .hero{padding:56px 0 28px;border-bottom:1px solid var(--line)}
-  h1{font-size:clamp(28px,4.2vw,44px);line-height:1.15;margin:0 0 14px;letter-spacing:-.02em}
+  .pct{font:600 13px var(--mono);color:var(--dim);min-width:104px;text-align:right}
+  .reset{font:12px var(--mono);background:transparent;color:var(--dim);border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}
+  .reset:hover{color:var(--txt);border-color:var(--accent)}
+  .hero{padding:52px 0 26px;border-bottom:1px solid var(--line)}
+  h1{font-size:clamp(27px,4.1vw,43px);line-height:1.14;margin:0 0 14px;letter-spacing:-.02em}
   h1 em{font-style:normal;color:var(--accent)}
-  .lead{color:var(--dim);max-width:70ch;margin:0 0 20px}
+  .lead{color:var(--dim);max-width:72ch;margin:0 0 20px}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{font:12px var(--mono);color:var(--dim);border:1px solid var(--line);
-    padding:4px 10px;border-radius:99px;background:var(--bg2)}
-  nav.toc{display:flex;gap:8px;flex-wrap:wrap;padding:18px 0}
-  nav.toc a{font:13px var(--mono);text-decoration:none;color:var(--dim);border:1px solid var(--line);
-    padding:6px 10px;border-radius:8px;background:var(--card)}
+  .chip{font:12px var(--mono);color:var(--dim);border:1px solid var(--line);padding:4px 10px;border-radius:99px;background:var(--bg2)}
+  nav.toc{display:flex;gap:8px;flex-wrap:wrap;padding:16px 0}
+  nav.toc a{font:13px var(--mono);text-decoration:none;color:var(--dim);border:1px solid var(--line);padding:6px 10px;border-radius:8px;background:var(--card)}
   nav.toc a:hover{color:var(--txt);border-color:var(--accent)}
-  section{padding:34px 0 10px}
+  section{padding:32px 0 8px}
   .fase-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
   h2{font-size:22px;margin:0;letter-spacing:-.01em}
-  .sem{font:12px var(--mono);color:var(--accent);border:1px solid #1e3a4d;background:#0d2028;
-    padding:3px 8px;border-radius:6px}
-  .obj{color:var(--dim);margin:6px 0 22px;max-width:75ch}
+  .sem{font:12px var(--mono);color:var(--accent);border:1px solid #1e3a4d;background:#0d2028;padding:3px 8px;border-radius:6px}
+  .obj{color:var(--dim);margin:6px 0 20px;max-width:78ch}
   .trilha{position:relative;padding-left:26px}
-  .trilha:before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;
-    background:linear-gradient(180deg,var(--accent),#2a3244 60%,transparent)}
-  .no{position:relative;margin-bottom:14px}
-  .no:before{content:"";position:absolute;left:-22px;top:18px;width:10px;height:10px;border-radius:50%;
-    background:var(--bg);border:2px solid var(--line)}
+  .trilha:before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--accent),#2a3244 55%,transparent)}
+  .no{position:relative;margin-bottom:12px}
+  .no:before{content:"";position:absolute;left:-22px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--bg);border:2px solid var(--line)}
   .no.done:before{background:var(--ok);border-color:var(--ok)}
   details{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
   details[open]{border-color:#2b3a52}
-  summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;padding:14px 16px}
+  summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;padding:13px 15px}
   summary::-webkit-details-marker{display:none}
-  .ck{flex:0 0 auto;width:20px;height:20px;border:1.5px solid #3a4356;border-radius:6px;margin-top:1px;
-    display:grid;place-items:center;background:#0f141c;cursor:pointer}
+  .ck{flex:0 0 auto;width:20px;height:20px;border:1.5px solid #3a4356;border-radius:6px;margin-top:1px;display:grid;place-items:center;background:#0f141c;cursor:pointer}
   .ck:hover{border-color:var(--accent)}
   .ck.on{background:var(--ok);border-color:var(--ok)}
   .ck svg{width:12px;height:12px;stroke:#0d1117;stroke-width:3;fill:none;opacity:0}
@@ -67,28 +62,25 @@
   .t-ferr{color:#79c0ff;border:1px solid #1e3a52;background:#0d1b26}
   .t-proj{color:#d2a8ff;border:1px solid #3d2a56;background:#180f24}
   .t-port{color:#e3b341;border:1px solid #4d3a14;background:#231a08}
-  .body{padding:0 16px 18px;border-top:1px solid var(--line);margin-top:2px}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-top:14px}
+  .body{padding:0 15px 16px;border-top:1px solid var(--line);margin-top:2px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:13px}
   @media(max-width:760px){.grid{grid-template-columns:1fr}}
-  .body h4{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.08em;
-    color:var(--dim);margin:0 0 8px}
-  .body ul{margin:0;padding-left:18px}
-  .body li{margin:3px 0}
-  .crit{background:#0f141c;border-left:3px solid var(--warn);padding:10px 12px;border-radius:0 8px 8px 0;margin-top:14px}
-  .crit b{color:var(--warn);font-size:12px;font-family:var(--mono);display:block;margin-bottom:2px}
-  .prova{background:#0f141c;border-left:3px solid var(--accent2);padding:10px 12px;border-radius:0 8px 8px 0;margin-top:8px}
-  .prova b{color:var(--accent2);font-size:12px;font-family:var(--mono);display:block;margin-bottom:2px}
-  table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:14px}
+  .body h4{font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin:0 0 7px}
+  .body ul{margin:0;padding-left:17px}
+  .body li{margin:3px 0;font-size:14.5px}
+  .box{background:#0f141c;border-left:3px solid var(--line);padding:9px 12px;border-radius:0 8px 8px 0;margin-top:8px;font-size:14.5px}
+  .box b{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px;color:var(--dim)}
+  .crit{border-left-color:var(--warn)} .crit b{color:var(--warn)}
+  .prova{border-left-color:var(--accent2)} .prova b{color:var(--accent2)}
+  .ex{border-left-color:var(--accent)} .ex b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;margin:8px 0 6px;font-size:14px}
   th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-  th{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--dim)}
-  .nota{border:1px solid #4d3a14;background:#1b1508;border-radius:12px;padding:14px 16px;margin:16px 0}
+  th{font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--dim)}
+  td.n{font:12px var(--mono);color:var(--accent);white-space:nowrap}
+  .nota{border:1px solid #4d3a14;background:#1b1508;border-radius:12px;padding:13px 16px;margin:14px 0}
   .nota b{color:var(--warn)}
-  .fora{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--bg2)}
-  footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0 40px;color:var(--dim);font-size:13px}
-  .reset{font:12px var(--mono);background:transparent;color:var(--dim);border:1px solid var(--line);
-    border-radius:8px;padding:5px 10px;cursor:pointer}
-  .reset:hover{color:var(--txt);border-color:var(--accent)}
-  @media print{header{position:static}details{border:1px solid #ccc}}
+  .tblwrap{overflow-x:auto}
+  footer{border-top:1px solid var(--line);margin-top:36px;padding:20px 0 40px;color:var(--dim);font-size:13px}
 </style>
 </head>
 <body>
@@ -103,305 +95,150 @@
 
 <div class="wrap">
   <div class="hero">
-    <h1>De dev full stack a <em>programador de jogos</em><br>— 26 semanas, 15 h por semana</h1>
-    <p class="lead">Trilha em ordem de dependência: bancada e matemática, C++ de verdade, Unreal 5 até o protótipo publicado, um jogo jogável com números medidos e, só então, candidatura em co-dev, port e estúdio independente. Cada semana tem exercício com número — não tem “assisti aula”.</p>
+    <h1>De dev full stack a <em>programador de jogo</em><br>em 26 semanas</h1>
+    <p class="lead">De full-stack web a gameplay programmer: C++, Unreal 5 e um jogo publicado em 26 semanas (15 h/semana, ~390 h). Fase 0 é pré-requisito e não está nessas horas.</p>
     <div class="chips">
-      <span class="chip">≈ 390 h no total</span>
+      <span class="chip">5 fases · 31 etapas</span>
+      <span class="chip">15 h/semana</span>
       <span class="chip">C++ moderno</span>
       <span class="chip">Unreal 5</span>
-      <span class="chip">gameplay</span>
-      <span class="chip">portfólio publicado</span>
+      <span class="chip">jogo publicado</span>
       <span class="chip">4 portões de decisão</span>
     </div>
   </div>
 
   <nav class="toc">
-    <a href="#f0">0 · Bancada</a>
+    <a href="#f0">0 · base</a>
     <a href="#f1">1 · C++</a>
     <a href="#f2">2 · Unreal</a>
-    <a href="#f3">3 · Jogo</a>
-    <a href="#f4">4 · Vaga</a>
-    <a href="#onde">Onde aplicar</a>
-    <a href="#fora">O que fica fora</a>
+    <a href="#f3">3 · jogo</a>
+    <a href="#f4">4 · vaga</a>
+    <a href="#portoes">Portões</a>
+    <a href="#ferramentas">Ferramentas</a>
+    <a href="#pacote">Pacote</a>
+    <a href="#fora">Fica fora</a>
   </nav>
 
   <div id="app"></div>
 
-  <section id="onde">
-    <div class="fase-top"><h2>Onde aplicar</h2><span class="sem">depois da semana 17</span></div>
-    <p class="obj">Co-dev e port abrem júnior/mid em C++ onde o AAA não abre. Vaga aberta muda toda semana — o que não muda é o tipo de empresa e o que ela pede.</p>
-    <table>
-      <thead><tr><th>Porta</th><th>Por que serve</th><th>O que ela pede</th></tr></thead>
+  <section id="portoes">
+    <div class="fase-top"><h2>Os 4 portões de decisão</h2><span class="sem">onde a trilha para e decide</span></div>
+    <p class="obj">Portão não é prova final: é o ponto em que o número decide se você segue, repete ou muda de rota. Sem ele, o plano anda por sensação.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Portão</th><th>Semana</th><th>O número que decide</th><th>Se reprovar</th></tr></thead>
       <tbody>
-        <tr><td>Co-dev / port (Saber, Sperasoft, QLOC, Virtuos, Abstraction)</td><td>Terceirizam trabalho de estúdio grande; entram júnior em C++</td><td>C++ sólido, Engine, inglês para reportar</td></tr>
-        <tr><td>Estúdio brasileiro remoto (Kokku, Webcore, Aquiris)</td><td>Contrato remoto em BRL, stack parecida</td><td>Gameplay ou backend de jogo, protótipo jogável</td></tr>
-        <tr><td>Backend de jogo / serviços (Pragma, AccelByte)</td><td>Onde a sua stack atual já vale: Java, SQL, API</td><td>Backend, serviços, escala</td></tr>
-        <tr><td>Estúdio AAA (CD Projekt, Playground, Rockstar)</td><td>Só depois de 5+ anos de indústria</td><td>Histórico comprovado em jogo lançado</td></tr>
+      <tr><td><b>Máquina</b></td><td class='n'>1</td><td>≥30 fps em cena de primitivas e build limpo &lt;15 min</td><td>GPU com 8 GB de VRAM (mínimo da Epic); preço não verificado</td></tr><tr><td><b>C++ integrador</b></td><td class='n'>9</td><td>tick 20 Hz headless + 2 clientes UDP, erro de posição ≤0,50 m com interpolação de 100 ms</td><td>repete as semanas 5–8 em modo exercício antes de tocar Unreal</td></tr><tr><td><b>Protótipo publicado</b></td><td class='n'>17</td><td>URL pública abre em outra máquina + vídeo de 60 s</td><td>não entra na fase 3; publica versão menor (escopo B)</td></tr><tr><td><b>Gameplay × AI</b></td><td class='n'>22</td><td>decisão escrita em 1 frase, com o que mediu nos bots e no combate</td><td>padrão: gameplay; AI só se gostar de depurar comportamento</td></tr>
       </tbody>
-    </table>
-    <div class="nota"><b>Sem vacina contra a espera:</b> a primeira vaga técnica chega de 0 a 12 meses <em>depois</em> da semana 26, e depende de vaga aberta, inglês e autorização de trabalho. 26 semanas entregam candidato empregável em co-dev/port — não a vaga sênior.</div>
+    </table></div>
+  </section>
+
+  <section id="ferramentas">
+    <div class="fase-top"><h2>Ferramentas que o entrevistador pergunta</h2></div>
+    <p class="obj">Nenhuma delas entra como curso: entram dentro de um exercício, numa semana com nome.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Ferramenta</th><th>O que precisam ouvir</th><th>Semana</th></tr></thead>
+      <tbody><tr><td><b>Git (branch, PR, bisect)</b></td><td>fluxo de trabalho, não comando decorado</td><td class='n'>0.2</td></tr>
+<tr><td><b>gdb</b></td><td><code>bt</code>, <code>break</code>, core dump</td><td class='n'>0.4 e 8</td></tr>
+<tr><td><b>Sanitizers (ASan/UBSan/TSan)</b></td><td>como se acha leak e corrida de dado</td><td class='n'>2, 7, 8</td></tr>
+<tr><td><b>Profiler da Unreal (Insights, stat unit)</b></td><td>cortar milissegundos com prova</td><td class='n'>1 e 16</td></tr>
+<tr><td><b>Captura de vídeo (OBS)</b></td><td>mostrar o jogo em 60 s</td><td class='n'>17 e 20</td></tr>
+<tr><td><b>itch.io</b></td><td>publicar build jogável</td><td class='n'>17 e 21</td></tr>
+<tr><td><b>Terminal / shell</b></td><td>navegar, compilar, rodar teste</td><td class='n'>0.2</td></tr></tbody>
+    </table></div>
+  </section>
+
+  <section id="pacote">
+    <div class="fase-top"><h2>Pacote de candidatura</h2></div>
+    <p class="obj">Cada peça existe para provar uma coisa só. Peça que não prova nada é peso no e-mail.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Peça</th><th>O que prova</th><th>Semana</th></tr></thead>
+      <tbody><tr><td><b>Build jogável no itch.io</b></td><td>você termina coisa e entrega</td><td class='n'>17, 21</td></tr>
+<tr><td><b>Vídeo de 60 s</b></td><td>o jogo existe e é legível sem instalar</td><td class='n'>17</td></tr>
+<tr><td><b>README de projeto</b></td><td>organização e reprodutibilidade</td><td class='n'>10, 17</td></tr>
+<tr><td><b>Writeup com números</b></td><td>pensa como engenheiro, não como tutorial</td><td class='n'>24</td></tr>
+<tr><td><b>Demo reel</b></td><td>só com 2+ sistemas medidos</td><td class='n'>24–25</td></tr></tbody>
+    </table></div>
+    <div class="nota"><b>Sem promessa de vaga:</b> 26 semanas entregam candidato empregável em co-dev, port e estúdio independente. A primeira vaga técnica chega de 0 a 12 meses depois do ciclo e depende de vaga aberta, inglês e autorização de trabalho. O portão de 5 anos de indústria só começa na primeira contratação.</div>
   </section>
 
   <section id="fora">
     <div class="fase-top"><h2>O que fica fora deste ciclo</h2></div>
-    <div class="fora">
-      <ul>
-        <li><b>Rendering e shaders.</b> Não cabe em 26 semanas e quase não abre júnior. Fica fora por decisão, não por falta de vontade.</li>
-        <li><b>Estágio de verão da CDPR.</b> Exige autorização de trabalho na Polônia no período e a página deles diz que não dá suporte a visto nem relocação. Só volta a ser opção depois da cidadania europeia.</li>
-        <li><b>Cargo com “5 anos de games”.</b> Vaga que pede isso hoje é ruído: o relógio da indústria só começa na primeira contratação.</li>
-        <li><b>Unity e C# em paralelo.</b> Um engine por ciclo. Unreal abre as vagas de C++ que interessam e a sua base é C++/Java, não C#.</li>
-      </ul>
-    </div>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Fica fora</th><th>Motivo</th></tr></thead>
+      <tbody><tr><td><b>Rendering</b></td><td>quase não abre júnior e não cabe em 26 semanas</td></tr><tr><td><b>GAS</b></td><td>framework pronto esconde o que a entrevista pergunta; entra no ciclo 2</td></tr><tr><td><b>Console / Steam</b></td><td>exige devkit e conta paga; o itch.io cobre a prova pública</td></tr><tr><td><b>Rede além da semana 9</b></td><td>só o suficiente para o portão; multiplayer é outro ciclo</td></tr><tr><td><b>Matemática avançada</b></td><td>só a que gameplay usa; rendering exigiria bem mais</td></tr></tbody>
+    </table></div>
   </section>
 
   <footer>
-    Trilha montada a partir do plano de 26 semanas em C++/Unreal e da avaliação de estúdios do acervo do Felipe.
-    Números e critérios são verificáveis; link marcado “não verificado” é para conferir antes de estudar por ele.
-    O progresso fica salvo só neste navegador.
+    Trilha derivada do plano de 26 semanas em C++/Unreal. Números e critérios são verificáveis; recurso sem URL confiável aparece como nome e marcado “link não verificado”.
+    O progresso fica salvo só neste navegador, neste endereço.
   </footer>
 </div>
 
 <script>
-const FASES = [
- { id:"f0", titulo:"Fase 0 · Bancada", semanas:"semana 0–1", tipo:"pre",
-   objetivo:"Saber o que a máquina aguenta, mexer no terminal e no Git sem susto, e ter a matemática que a engine usa.",
-   porque:"Metade dos planos de estudo morre aqui: a pessoa começa a engine e descobre que não entende vetor nem branch.",
-   nos:[
-    { id:"f0n1", titulo:"Medir a máquina", tipo:"ferramenta", semana:"1", horas:6,
-      conceitos:["Abrir o projeto que já existe no PC que roda Unreal","Comando de estatística de frame (`stat unit`)","Build limpo cronometrado","Critério de compra de GPU: só com número na mão"],
-      recursos:[{t:"Documentação de profiling da Unreal (dev.epicgames.com)",u:"https://dev.epicgames.com/documentation/",g:true,idioma:"en"}],
-      exercicio:"Rodar `stat unit` na cena de primitivas e um build limpo do projeto existente.",
-      criterio:"≥ 30 fps e build < 15 min registrados. Se não der, mede de novo antes de comprar GPU.",
-      prova:"Um parágrafo no README do protótipo com os dois números e o modelo da máquina." },
-    { id:"f0n2", titulo:"Git e terminal de verdade", tipo:"ferramenta", semana:"0", horas:4,
-      conceitos:["branch, merge, rebase e o que dá conflito","`git log`, `git bisect`, `git stash`","Commit pequeno e mensagem que explica o porquê","Git LFS para asset binário de engine"],
-      recursos:[{t:"Pro Git (livro livre, tem tradução PT)",u:"https://git-scm.com/book/pt-br",g:true,idioma:"pt"}],
-      exercicio:"Reorganizar o repositório do protótipo em branches: `main` estável, uma branch por experimento.",
-      criterio:"Nenhum commit direto na `main` por 2 semanas; histórico legível por outra pessoa.",
-      prova:"Histórico do repositório — é a primeira coisa que recrutador de engine abre." },
-    { id:"f0n3", titulo:"Matemática que a engine usa", tipo:"fundamento", semana:"0–1", horas:6,
-      conceitos:["Vetor, soma, escala, normalização","Produto escalar (visão, oclusão) e produto vetorial (eixo de giro)","Interpolação linear e suavização","Base ortonormal e espaço local × mundo"],
-      recursos:[{t:"Math for Game Developers (série de vídeos com exercícios)",u:"",g:true,idioma:"en"}],
-      exercicio:"Escrever à mão, sem engine: detectar se o jogador está à frente de um NPC e a que distância.",
-      criterio:"Acertar 10 casos de teste escritos antes do código.",
-      prova:"Arquivo `.md` curto com o código e o desenho de cada caso." },
-    { id:"f0n4", titulo:"Inglês técnico falado", tipo:"fundamento", semana:"0–26", horas:"2/semana",
-      conceitos:["Descrever um bug em 30 s","Explicar uma decisão de arquitetura","Vocabulário de engine: tick, actor, class, build","Entrevista técnica sem roteiro decorado"],
-      recursos:[{t:"Documentação da Unreal 5 em inglês (dev.epicgames.com) — leitura diária",u:"https://dev.epicgames.com/documentation/",g:true,idioma:"en"}],
-      exercicio:"Gravar 60 s de áudio explicando o que você fez na semana, uma vez por semana.",
-      criterio:"Sem texto na frente a partir da semana 10.",
-      prova:"Pasta local com os áudios; o vídeo do protótipo sai em inglês." }
-   ]},
- { id:"f1", titulo:"Fase 1 · C++ de verdade", semanas:"semanas 2–9", tipo:"fundamento",
-   objetivo:"Sair do C++ de faculdade para C++ de engine: memória, custo e depuração medidos.",
-   porque:"Engine é C++ com regra de performance. Sem essa fase, o projeto em Unreal vira Blueprint copiado de tutorial.",
-   nos:[
-    { id:"f1n1", titulo:"Tipos, referência × ponteiro, stack × heap", tipo:"fundamento", semana:"2", horas:15,
-      conceitos:["`int`/`size_t`/`float` e o que estoura","referência é apelido, ponteiro é endereço","tempo de vida na stack × heap","`new`/`delete` e por que a engine evita"],
-      recursos:[{t:"Learn C++ (learncpp.com) — capítulos de fundamentos",u:"https://www.learncpp.com/",g:true,idioma:"en"},{t:"cppreference (consulta, não leitura)",u:"https://en.cppreference.com/",g:true,idioma:"en"}],
-      exercicio:"Escrever um vetor dinâmico próprio com `push_back`, realocação e tamanho.",
-      criterio:"1 M inserções sem erro e 0 leak no AddressSanitizer.",
-      prova:"Repo `cpp-vector-from-scratch` com README e o comando de teste." },
-    { id:"f1n2", titulo:"RAII, cópia × movimento", tipo:"fundamento", semana:"3", horas:15,
-      conceitos:["construtor e destrutor como dono do recurso","regra de três × regra de cinco","move ctor e `std::move`","`= delete` e `= default`"],
-      exercicio:"`Buffer` com move constructor e teste que prova a diferença.",tipo:"fundamento",
-      criterio:"Cópia de 100 MB ≥ 10× mais lenta que o move — medido.",
-      prova:"Tabela de tempos no README." },
-    { id:"f1n3", titulo:"STL, iteradores e complexidade", tipo:"fundamento", semana:"4", horas:15,
-      conceitos:["sequência × associativa × hash","invalidacão de iterador","`O(n)` × `O(log n)` na prática","algoritmos prontos antes do laço escrito à mão"],
-      exercicio:"3 exercícios só com STL, cada um com benchmark.",
-      criterio:"`vector` × `list` × `map` medidos em 1 M de elementos.",
-      prova:"Gráfico ou tabela de ms no README." },
-    { id:"f1n4", titulo:"Templates, lambdas e `std::function`", tipo:"fundamento", semana:"5", horas:15,
-      conceitos:["template de função × de classe","lambda e captura por valor/referência","`std::function` e o custo do type erasure","callbacks no estilo de engine"],
-      exercicio:"Sistema de eventos com callbacks e prioridade.",
-      criterio:"5 testes verdes, incluindo remoção de callback no meio da emissão.",
-      prova:"Repo `cpp-event-system` com os testes." },
-    { id:"f1n5", titulo:"Memória: alinhamento, cache, ponteiros inteligentes", tipo:"fundamento", semana:"6", horas:15,
-      conceitos:["alinhamento e padding","localidade de cache e o custo do ponteiro saltando","AoS × SoA","`unique_ptr` × `shared_ptr` × referência crua"],
-      exercicio:"Simulação de 1 M de partículas em AoS e em SoA.",
-      criterio:"Diferença de ms/frame medida e explicada em 3 frases.",
-      prova:"Comparação no README com o perfil de acesso." },
-    { id:"f1n6", titulo:"Concorrência: threads, mutex, atomics", tipo:"fundamento", semana:"7", horas:15,
-      conceitos:["thread e `join`","mutex e o que é deadlock","`atomic` e ordem de memória (o básico)","fila de trabalho com workers"],
-      exercicio:"Job system com 4 workers processando 1 M de itens.",
-      criterio:"Speedup ≥ 2,5× sobre a versão de uma thread.",
-      prova:"Tabela de tempo por número de threads." },
-    { id:"f1n7", titulo:"Depurar: sanitizers, gdb, profiler", tipo:"ferramenta", semana:"8", horas:15,
-      conceitos:["AddressSanitizer e UndefinedBehaviorSanitizer","breakpoint, `watch`, backtrace","profiling por amostragem","isolar bug reportado por outra pessoa"],
-      exercicio:"Caçar 3 bugs plantados de propósito num código seu.",
-      criterio:"Relatório de 1 página por bug: sintoma, causa, correção.",
-      prova:"Pasta `reports/` no repo." },
-    { id:"f1n8", titulo:"Portão 1 — C++ integrador", tipo:"portao", semana:"9", horas:15,
-      conceitos:["loop de tick com passo fixo","estado de jogo serializável","UDP local sem biblioteca pesada","medir erro de posição"],
-      exercicio:"Servidor headless a 20 Hz com 2 clientes UDP na mesma máquina.",
-      criterio:"Erro de posição medido em metros após 5 min de jogo — o número decide se vale seguir para engine.",
-      prova:"Vídeo de 30 s e README com o erro medido." }
-   ]},
- { id:"f2", titulo:"Fase 2 · Unreal 5", semanas:"semanas 10–17", tipo:"projeto",
-   objetivo:"Dominar o framework de gameplay em C++ até um protótipo empacotado e publicado.",
-   porque:"É a fase que aparece no currículo. Cada semana termina em algo que abre e roda, não em aula assistida.",
-   nos:[
-    { id:"f2n1", titulo:"AActor, UPROPERTY e Gameplay Framework", tipo:"projeto", semana:"10", horas:15,
-      conceitos:["Actor, Component, Level","`UPROPERTY` e o que o garbage collector vê","GameMode, PlayerController, Pawn","ciclo `BeginPlay`/`Tick`"],
-      exercicio:"Personagem com input em C++ puro, sem Blueprint no movimento.",
-      criterio:"Build empacotada abre e o personagem anda.",
-      prova:"Repo do protótipo com o `Build/` fora do Git e um GIF curto." },
-    { id:"f2n2", titulo:"Câmera e CharacterMovement", tipo:"projeto", semana:"11", horas:15,
-      conceitos:["spring arm e colisão de câmera","`MaxWalkSpeed`, aceleração, frenagem","chão × ar","terceira pessoa legível"],
-      exercicio:"Terceira pessoa jogável numa pista medida.",
-      criterio:"6 m/s medidos na pista de 24 m.",
-      prova:"Vídeo com a medição na tela." },
-    { id:"f2n3", titulo:"Enhanced Input e HUD em UMG", tipo:"projeto", semana:"12", horas:15,
-      conceitos:["Input Action × Input Mapping Context","pause e reinício sem vazar estado","HUD por binding × por evento","empacotar depois de mexer em UMG"],
-      exercicio:"Pause, reiniciar e HUD de velocidade.",
-      criterio:"Os 3 funcionam na build empacotada, não só no editor.",
-      prova:"Checklist no README com o que foi testado na build." },
-    { id:"f2n4", titulo:"Animação com AnimInstance em C++", tipo:"projeto", semana:"13", horas:15,
-      conceitos:["estado de animação dirigido por código","blend por variável","notify e evento de passo","evitar `if` na lógica de transição"],
-      exercicio:"3 estados de animação com primitivas.",
-      criterio:"Transição controlada por dados, sem cadeia de `if`.",
-      prova:"Trecho de código no README explicando a máquina de estados." },
-    { id:"f2n5", titulo:"IA: AIController, Behavior Tree, NavMesh", tipo:"projeto", semana:"14", horas:15,
-      conceitos:["Blackboard × Behavior Tree","percepção (visão e audição)","NavMesh e patrulha por pontos","custo de vários agentes"],
-      exercicio:"3 inimigos que patrulham e perseguem.",
-      criterio:"3 bots rodando 5 min sem travar nem empilhar.",
-      prova:"Vídeo de 30 s com os 3 bots e o log de FPS." },
-    { id:"f2n6", titulo:"Combate próprio, sem GAS", tipo:"projeto", semana:"15", horas:15,
-      conceitos:["hitbox e overlap confiável","dano, vida e morte","i-frames e hitstop","feedback: som, tremor, flash"],
-      exercicio:"Loop de combate completo com vitória e derrota.",
-      criterio:"60 s de jogo sem bug conhecido, com os números de hitstop documentados.",
-      prova:"Vídeo de 60 s — este é o clipe que vai no currículo." },
-    { id:"f2n7", titulo:"Profiling e corte de frame time", tipo:"ferramenta", semana:"16", horas:15,
-      conceitos:["Unreal Insights","`stat unit` e as três barras","game thread × render thread","o que cortar primeiro"],
-      exercicio:"Cortar frame time do protótipo com antes e depois.",
-      criterio:"−4 ms provados em gráfico.",
-      prova:"Captura do Insights no README." },
-    { id:"f2n8", titulo:"Portão 2 — publicar o protótipo", tipo:"portao", semana:"17", horas:15,
-      conceitos:["empacotar para Windows","página no itch.io","vídeo de 60 s","testar em outra máquina"],
-      exercicio:"Build pública + página + vídeo.",
-      criterio:"URL abre e roda em outra máquina, sem o editor instalado.",
-      prova:"Link público no LinkedIn e no README do perfil." }
-   ]},
- { id:"f3", titulo:"Fase 3 · Jogo jogável e especialidade", semanas:"semanas 18–24", tipo:"projeto",
-   objetivo:"Um jogo pequeno, jogado por estranhos, com números que provam decisão de design.",
-   porque:"Protótipo mostra engine; jogo mostra que você termina. Terminar é o que separa candidato de curioso.",
-   nos:[
-    { id:"f3n1", titulo:"Um verbo só, uma sala", tipo:"projeto", semana:"18", horas:15,
-      conceitos:["escopo de 1 verbo","sala como tutorial disfarçado","estado mínimo de jogo","o que cortar quando o tempo acaba"],
-      exercicio:"Base jogável com um verbo e uma sala.",
-      criterio:"60 s jogáveis sem bug bloqueante.",
-      prova:"Vídeo + build atualizada no itch.io." },
-    { id:"f3n2", titulo:"Salas 2–3 e o “feel”", tipo:"projeto", semana:"19", horas:15,
-      conceitos:["coyote time, input buffer, hitstop","número no README, não no olho","curva de dificuldade","leitura visual de perigo"],
-      exercicio:"Três salas com o feel ajustado.",
-      criterio:"3 números justificados com o porquê.",
-      prova:"Seção “feel” no README com os valores e o efeito." },
-    { id:"f3n3", titulo:"Playtest com 2 pessoas", tipo:"projeto", semana:"20", horas:15,
-      conceitos:["observar em silêncio","onde a pessoa trava × onde ela reclama","registro de observação","o que ignorar do feedback"],
-      exercicio:"Duas sessões sem explicar nada antes.",
-      criterio:"10 observações registradas, com horário.",
-      prova:"Nota `playtest-1.md` no repo." },
-    { id:"f3n4", titulo:"Corrigir os 3 problemas mais repetidos", tipo:"projeto", semana:"21", horas:15,
-      conceitos:["priorizar por frequência","mudança pequena × retrabalho","changelog","nova build"],
-      exercicio:"v1.0 com três correções.",
-      criterio:"3 correções + changelog publicado.",
-      prova:"Changelog no itch.io." },
-    { id:"f3n5", titulo:"Portão 3 — gameplay ou IA?", tipo:"portao", semana:"22", horas:15,
-      conceitos:["o que você gostou de medir","combate × percepção/behavior","mercado: qual abre mais júnior","decisão escrita"],
-      exercicio:"Comparar o que rendeu no combate (semana 15) e nos bots (semana 14).",
-      criterio:"Decisão de uma frase, escrita no plano.",
-      prova:"Parágrafo no README e no plano de estudo." },
-    { id:"f3n6", titulo:"O sistema novo da especialidade", tipo:"projeto", semana:"23", horas:15,
-      conceitos:["IA: EQS, StateTree, percepção","gameplay: segundo verbo que interage com o primeiro","medir o sistema novo","mantê-lo legível"],
-      exercicio:"Um sistema novo medido na demo.",
-      criterio:"Demo de 30 s mostrando o sistema funcionando.",
-      prova:"Vídeo + trecho de código explicado." },
-    { id:"f3n7", titulo:"Writeup técnico e 3 posts", tipo:"projeto", semana:"24", horas:15,
-      conceitos:["escrever com número, não com opinião","estrutura de postmortem curto","onde publicar (LinkedIn, itch.io, devlog)","o que não contar"],
-      exercicio:"Um writeup de 1 página e 3 posts.",
-      criterio:"1 writeup + 3 posts publicados.",
-      prova:"Links no perfil e no README." }
-   ]},
- { id:"f4", titulo:"Fase 4 · Entrar na indústria", semanas:"semanas 25–26", tipo:"candidatura",
-   objetivo:"Transformar o que existe em candidatura que passa do primeiro filtro, e medir a taxa de resposta.",
-   porque:"Portfólio não se candidata sozinho; e sem medir resposta, você repete o mesmo erro 40 vezes.",
-   nos:[
-    { id:"f4n1", titulo:"Aplicar com kit: 20 candidaturas", tipo:"portao", semana:"25", horas:15,
-      conceitos:["kit de avaliação do estúdio antes de aplicar","co-dev e port primeiro","10 contatos humanos, não só formulário","registro de cada candidatura"],
-      exercicio:"20 candidaturas registradas com data, canal e resposta.",
-      criterio:"20 registradas e pelo menos 2 respostas humanas.",
-      prova:"Planilha pessoal — não vai para o Git." },
-    { id:"f4n2", titulo:"Fechar o ciclo e desenhar o próximo", tipo:"portao", semana:"26", horas:15,
-      conceitos:["o que falhou por mérito × por mercado","quanto do plano era otimista","próximo bloco de 26 semanas","o que manter vivo (loja, PDV, inglês)"],
-      exercicio:"Revisão escrita do ciclo.",
-      criterio:"Plano do ciclo 2 escrito com o que muda.",
-      prova:"Nota pessoal; o site é atualizado com a nova trilha." }
-   ]}
-];
-
-const LABEL = {fundamento:"fundamento",frente:"",ferramenta:"ferramenta",projeto:"projeto",portao:"portão",pre:""};
-const TAGC = {fundamento:"t-fund",ferramenta:"t-ferr",projeto:"t-proj",portao:"t-port",pre:"t-fund"};
-const KEY = "roadmap-games-v1";
+const DATA = {"titulo":"Roadmap de programador de jogo","subtitulo":"De full-stack web a gameplay programmer: C++, Unreal 5 e um jogo publicado em 26 semanas (15 h/semana, ~390 h). Fase 0 é pré-requisito e não está nessas horas.","horasSemana":15,"fases":[{"id":"f0","titulo":"Fase 0 — base","semanas":"0","objetivo":"Medir a máquina, dominar Git/terminal e a matemática que as semanas 1–9 pressupõem.","porque":"Sem o número da máquina a fase 1 vira compra de hardware às cegas; sem vetor e dot toda conta de gameplay parece mágica.","nos":[{"id":"f0n1","titulo":"Medir a máquina","tipo":"fundamento","semana":"0.1","horas":3,"conceitos":["stat unit (Game/Draw/GPU ms)","build limpo x incremental","VRAM dedicada x compartilhada","orçamento de 16,6 ms a 60 fps"],"recursos":[{"titulo":"Unreal Engine — Hardware and Software Specifications","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/hardware-and-software-specifications-for-unreal-engine","gratuito":true,"idioma":"en"}],"exercicio":"Abrir o projeto flappy-plane-unreal que já existe em D:\\UE_5.8, rodar stat unit por 60 s e cronometrar um build limpo.","criterio":"CPU, GPU, RAM, fps e minutos de build numa tabela — nenhum campo vazio","prova":"gamedev-notes/maquina.md com a tabela preenchida"},{"id":"f0n2","titulo":"Git e terminal","tipo":"ferramenta","semana":"0.2","horas":5,"conceitos":["branch e merge x rebase","PR pequeno","git bisect","commit atômico",".gitignore de projeto Unreal (Binaries, Intermediate, Saved, DerivedDataCache)"],"recursos":[{"titulo":"Pro Git Book","url":"https://git-scm.com/book/en/v2","gratuito":true,"idioma":"en"},{"titulo":"The Missing Semester of Your CS Education","url":"https://missing.csail.mit.edu/","gratuito":true,"idioma":"en"}],"exercicio":"Criar 3 branches com 3 PRs no próprio repo e rodar git bisect num bug plantado de propósito.","criterio":"3 PRs mergeados e o bisect localiza o commit culpado em ≤5 passos","prova":"histórico público do repo gamedev-notes"},{"id":"f0n3","titulo":"Matemática de jogo","tipo":"fundamento","semana":"0.3","horas":6,"conceitos":["vetor e normalização","produto escalar (ângulo e projeção)","produto vetorial (normal)","lerp x slerp","espaço local x mundo","ordem de multiplicação de matriz"],"recursos":[{"titulo":"Khan Academy — Linear Algebra","url":"https://www.khanacademy.org/math/linear-algebra","gratuito":true,"idioma":"en"},{"titulo":"3Blue1Brown — Essence of Linear Algebra (playlist)","url":"https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab","gratuito":true,"idioma":"en"}],"exercicio":"Implementar Vec3 com dot, cross, normalize e lerp, com 10 testes.","criterio":"10/10 testes verdes e lerp monotônico conferido em 1.000 amostras","prova":"math/vec3.hpp + suíte de testes"},{"id":"f0n4","titulo":"Ferramentas de diagnóstico","tipo":"ferramenta","semana":"0.4","horas":4,"conceitos":["flags -Wall -Wextra -g -O2","ler stack trace","gdb: run, bt, print, break","ASan e UBSan por flag"],"recursos":[{"titulo":"GDB Documentation","url":"https://sourceware.org/gdb/current/onlinedocs/gdb/","gratuito":true,"idioma":"en"},{"titulo":"AddressSanitizer (Clang)","url":"https://clang.llvm.org/docs/AddressSanitizer.html","gratuito":true,"idioma":"en"}],"exercicio":"Rodar o mesmo binário com e sem ASan num use-after-free plantado.","criterio":"ASan aponta arquivo, linha e tipo do erro em ≤2 min","prova":"debug/README.md com o relatório dos dois casos"}]},{"id":"f1","titulo":"Fase 1 — C++ de verdade","semanas":"1-9","objetivo":"Ser dono da memória: ponteiro, RAII, STL, templates, threads, debug e um integrador de rede.","porque":"É o filtro escrito na vaga e o que anos de web não substituem; cada semana tem prova em número.","nos":[{"id":"f1n1","titulo":"Medir a máquina (portão)","tipo":"portao","semana":"1","horas":15,"conceitos":["perfil de hardware","gargalo de GPU x CPU","custo de shader compilation","cena de estresse com 100 atores móveis","registro de evidência"],"recursos":[{"titulo":"Unreal Engine — Performance and Profiling","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/performance-and-profiling-in-unreal-engine","gratuito":true,"idioma":"en"}],"exercicio":"Cena de primitivas com 100 atores móveis, com stat unit registrado e print.","criterio":"≥30 fps em primitivas e build limpo <15 min — se reprovar, decisão de GPU com 8 GB de VRAM","prova":"gamedev-notes/maquina.md atualizado + print do stat unit"},{"id":"f1n2","titulo":"Tipos, referência x ponteiro, stack x heap","tipo":"fundamento","semana":"2","horas":15,"conceitos":["int, size_t, uint8_t e tamanho real","referência x ponteiro x nullptr","stack x heap","new/delete","sizeof e padding","UB por leitura fora do limite"],"recursos":[{"titulo":"Learn C++ — capítulos 4 a 6 e 9","url":"https://www.learncpp.com/","gratuito":true,"idioma":"en"},{"titulo":"cppreference","url":"https://en.cppreference.com/w/","gratuito":true,"idioma":"en"}],"exercicio":"Vetor dinâmico próprio com push_back, realocação em dobra de capacidade e destructor.","criterio":"1 M inserções com 0 leak apontado pelo ASan","prova":"cpp/dynarray/ com main.cpp e teste de 1 M"},{"id":"f1n3","titulo":"RAII, cópia x movimento","tipo":"fundamento","semana":"3","horas":15,"conceitos":["construtor e destructor","RAII","regra de três e de cinco","std::move","RVO","const correto"],"recursos":[{"titulo":"Learn C++ — capítulos 14 a 16 e 22","url":"https://www.learncpp.com/","gratuito":true,"idioma":"en"},{"titulo":"CppCon (canal no YouTube) — talks de move semantics","url":"https://www.youtube.com/@CppCon","gratuito":true,"idioma":"en"}],"exercicio":"Classe Buffer com copy ctor, move ctor e move assignment, com benchmark.","criterio":"cópia de 100 MB ≥10x mais lenta que o move, medido","prova":"cpp/buffer/ com benchmark e saída colada no README"},{"id":"f1n4","titulo":"STL, iteradores, complexidade","tipo":"fundamento","semana":"4","horas":15,"conceitos":["vector, map, unordered_map, list","invalidação de iterador","Big-O na prática","algorithm: sort, find_if, transform","reserve"],"recursos":[{"titulo":"cppreference — Containers","url":"https://en.cppreference.com/w/cpp/container","gratuito":true,"idioma":"en"},{"titulo":"Learn C++ — capítulos 16 a 20","url":"https://www.learncpp.com/","gratuito":true,"idioma":"en"}],"exercicio":"3 exercícios só com STL + benchmark dos três contêineres com 1 M elementos.","criterio":"tabela com tempo de vector x list x map em 1 M","prova":"cpp/stl-lab/ com a tabela de tempos"},{"id":"f1n5","titulo":"Templates, lambdas, std::function","tipo":"fundamento","semana":"5","horas":15,"conceitos":["template de função e de classe","dedução de tipo","lambda e captura","std::function e seu custo","auto","requires"],"recursos":[{"titulo":"Learn C++ — capítulos 8, 11, 13 e 20","url":"https://www.learncpp.com/","gratuito":true,"idioma":"en"},{"titulo":"cppreference — Templates","url":"https://en.cppreference.com/w/cpp/language/templates","gratuito":true,"idioma":"en"}],"exercicio":"Sistema de eventos com lista de callbacks e remoção durante o disparo.","criterio":"5 testes verdes, incluindo remoção no meio da iteração","prova":"cpp/events/ com os 5 testes"},{"id":"f1n6","titulo":"Memória: alinhamento, cache, ponteiros inteligentes","tipo":"fundamento","semana":"6","horas":15,"conceitos":["alinhamento e alignas","cache line e localidade","AoS x SoA","unique_ptr, shared_ptr, weak_ptr","custo do shared_ptr","false sharing"],"recursos":[{"titulo":"CppCon (canal no YouTube) — talks de data-oriented design","url":"https://www.youtube.com/@CppCon","gratuito":true,"idioma":"en"},{"titulo":"cppreference — Dynamic memory management","url":"https://en.cppreference.com/w/cpp/memory","gratuito":true,"idioma":"en"}],"exercicio":"1 M partículas em AoS e em SoA com o mesmo update.","criterio":"diferença de ms/frame medida e registrada","prova":"cpp/particles/ com os dois layouts e o gráfico"},{"id":"f1n7","titulo":"Concorrência: threads, mutex, atomics","tipo":"fundamento","semana":"7","horas":15,"conceitos":["std::thread","mutex e lock_guard","atomic e memory order básico","condição de corrida","thread pool","granularidade de tarefa"],"recursos":[{"titulo":"cppreference — Concurrency support","url":"https://en.cppreference.com/w/cpp/thread","gratuito":true,"idioma":"en"},{"titulo":"CppCon (canal no YouTube) — talks de atomics","url":"https://www.youtube.com/@CppCon","gratuito":true,"idioma":"en"}],"exercicio":"Job system com 4 workers processando 1 M itens.","criterio":"speedup ≥2,5x contra a versão single-thread","prova":"cpp/jobsystem/ com tempo de 1 e de 4 threads"},{"id":"f1n8","titulo":"Debug: sanitizers, gdb, perf","tipo":"ferramenta","semana":"8","horas":15,"conceitos":["ASan, UBSan, TSan","gdb com watch e core dump","perf record e perf report","ler flame graph","-O2 x -O0 no debug"],"recursos":[{"titulo":"AddressSanitizer (Clang)","url":"https://clang.llvm.org/docs/AddressSanitizer.html","gratuito":true,"idioma":"en"},{"titulo":"perf wiki","url":"https://perf.wiki.kernel.org/","gratuito":true,"idioma":"en"}],"exercicio":"Caçar 3 bugs plantados (leak, corrida, out-of-bounds) sem ler o código antes.","criterio":"relatório com causa, ferramenta e tempo de cada uma das 3 caças","prova":"debug/caca-bugs/ com os 3 relatórios"},{"id":"f1n9","titulo":"C++ integrador (portão): tick 20 Hz e rede","tipo":"portao","semana":"9","horas":15,"conceitos":["tick fixo a 20 Hz e dt fixo","Step(state, input, dt) puro e determinístico","snapshot serializado em struct","UDP local sem framework","interpolação com buffer de 100 ms","erro de posição em metros"],"recursos":[{"titulo":"T4 de tarefas-semanais.md (fonte interna)","url":"file:///home/emporio-ferreira/Documents/FelipeBrain/50-Pessoal/carreira-jogos/tarefas-semanais.md","gratuito":true,"idioma":"pt"},{"titulo":"Gaffer on Games — Networked Physics (link não verificado)","url":"","gratuito":true,"idioma":"en"}],"exercicio":"Servidor headless a 20 Hz + 2 clientes UDP local com interpolação de 100 ms.","criterio":"erro de posição ≤0,50 m medido e 5 testes de determinismo verdes","prova":"net/tick20/ com servidor, cliente e a planilha de erro"}]},{"id":"f2","titulo":"Fase 2 — Unreal 5 na mão","semanas":"10-17","objetivo":"Escrever o jogo em C++ dentro da Unreal e empacotar uma build que outra pessoa abre.","porque":"É onde o estúdio olha primeiro, e o protótipo publicado é a prova que substitui experiência que ele não tem.","nos":[{"id":"f2n1","titulo":"AActor, UPROPERTY e Gameplay Framework","tipo":"ferramenta","semana":"10","horas":15,"conceitos":["AActor, APawn, ACharacter","BeginPlay e Tick","UPROPERTY e reflexão","UCLASS e GENERATED_BODY","GameMode, PlayerController, GameState","FString e FVector"],"recursos":[{"titulo":"Unreal Engine — Gameplay Framework","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-framework-in-unreal-engine","gratuito":true,"idioma":"en"},{"titulo":"Unreal Engine — Programming with C++","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/programming-with-cplusplus-in-unreal-engine","gratuito":true,"idioma":"en"}],"exercicio":"Personagem com input em C++ puro, sem nó de Blueprint na lógica.","criterio":"build empacotada abre e o personagem responde ao input","prova":"repo do projeto UE com README de versão 5.8.2 e passos de build"},{"id":"f2n2","titulo":"Câmera, movimento e CharacterMovement","tipo":"ferramenta","semana":"11","horas":15,"conceitos":["CharacterMovementComponent","aceleração x velocidade máxima","gravidade e ápice de salto","spring arm e colisão de câmera","coyote time"],"recursos":[{"titulo":"Unreal Engine — Character Movement Component","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/character-movement-component-in-unreal-engine","gratuito":true,"idioma":"en"},{"titulo":"t1-spec-2026-11-07.md (números de referência, fonte interna)","url":"file:///home/emporio-ferreira/Documents/FelipeBrain/50-Pessoal/carreira-jogos/t1-spec-2026-11-07.md","gratuito":true,"idioma":"pt"}],"exercicio":"Terceira pessoa jogável numa pista de 24 m com marcas.","criterio":"6 m/s medido na pista e ápice de salto de 1,6 m","prova":"GIF de 10 s no README + valores num DataAsset"},{"id":"f2n3","titulo":"Enhanced Input e HUD em UMG","tipo":"ferramenta","semana":"12","horas":15,"conceitos":["Input Action e Input Mapping Context","UUserWidget em C++","binding de widget","SetPause e reinício de nível","HUD de velocidade"],"recursos":[{"titulo":"Unreal Engine — Enhanced Input","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine","gratuito":true,"idioma":"en"},{"titulo":"Unreal Engine — UMG UI Designer","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-ui-designer-for-unreal-engine","gratuito":true,"idioma":"en"}],"exercicio":"Menu de início, pause, reiniciar e HUD de velocidade.","criterio":"os 3 funcionam na build empacotada, não só no editor","prova":"tag v0.2-menu + screenshots"},{"id":"f2n4","titulo":"Animação com AnimInstance em C++","tipo":"ferramenta","semana":"13","horas":15,"conceitos":["UAnimInstance","NativeUpdateAnimation","máquina de estados","blend space","notificação de animação","root motion"],"recursos":[{"titulo":"Unreal Engine — Animation Blueprints","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprints-in-unreal-engine","gratuito":true,"idioma":"en"}],"exercicio":"3 estados (parado, andando, caindo) com primitivas.","criterio":"transição sem if na lógica de gameplay; 3 estados observados em vídeo","prova":"anim/ com o grafo exportado em imagem + explicação"},{"id":"f2n5","titulo":"AIController, Behavior Tree, Blackboard e NavMesh","tipo":"ferramenta","semana":"14","horas":15,"conceitos":["AAIController","Behavior Tree, decorator e service","Blackboard","NavMesh e MoveTo","percepção (visão e audição)"],"recursos":[{"titulo":"Unreal Engine — Behavior Trees","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/behavior-trees-in-unreal-engine","gratuito":true,"idioma":"en"},{"titulo":"Unreal Engine — AI Perception","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/ai-perception-in-unreal-engine","gratuito":true,"idioma":"en"}],"exercicio":"3 inimigos que patrulham e perseguem ao ver o jogador.","criterio":"3 bots com 0 travamento em 5 min de teste","prova":"árvore exportada + vídeo de 30 s"},{"id":"f2n6","titulo":"Combate próprio, sem GAS","tipo":"projeto","semana":"15","horas":15,"conceitos":["hitbox por sweep e trace","evento de dano","i-frames","hitstop","vida e morte","feedback: câmera, som, flash"],"recursos":[{"titulo":"Unreal Engine — Collision Overview","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/collision-in-unreal-engine","gratuito":true,"idioma":"en"},{"titulo":"Game Programming Patterns","url":"https://gameprogrammingpatterns.com/","gratuito":true,"idioma":"en"}],"exercicio":"Loop de combate de 60 s com vitória e derrota.","criterio":"loop de 60 s jogável do início ao fim, 2 vezes seguidas","prova":"tag v0.3-combate + GIF"},{"id":"f2n7","titulo":"Profiling: Insights e stat unit","tipo":"ferramenta","semana":"16","horas":15,"conceitos":["Unreal Insights e trace","stat unit e stat game","custo de Tick e de actor","custo de draw call","orçamento de ms"],"recursos":[{"titulo":"Unreal Engine — Unreal Insights","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-in-unreal-engine","gratuito":true,"idioma":"en"}],"exercicio":"Achar 2 gargalos reais de frame time e corrigir.","criterio":"−4 ms de frame time, antes x depois em gráfico","prova":"perf/ com o trace e o gráfico"},{"id":"f2n8","titulo":"Publicar protótipo (portão)","tipo":"portao","semana":"17","horas":15,"conceitos":["empacotamento Windows","página de itch.io","captura com OBS","README de projeto","versão e changelog"],"recursos":[{"titulo":"itch.io — Docs","url":"https://itch.io/docs/","gratuito":true,"idioma":"en"},{"titulo":"OBS Studio","url":"https://obsproject.com/","gratuito":true,"idioma":"pt"}],"exercicio":"Build + página no itch.io + vídeo de 60 s.","criterio":"URL pública abre em outra máquina e o vídeo tem 60 s","prova":"release com o .zip e link do itch.io no README"}]},{"id":"f3","titulo":"Fase 3 — gameplay e jogo publicado","semanas":"18-24","objetivo":"Fechar um verbo, três salas, playtest e v1.0 publicado, e decidir gameplay ou AI com número.","porque":"Sem 1 jogo publicado com número, nenhum estúdio de gameplay lê o resto do currículo.","nos":[{"id":"f3n1","titulo":"Verbo único, sala 1","tipo":"projeto","semana":"18","horas":15,"conceitos":["loop de 30 s","verbo principal e profundidade","sala como unidade de design","telemetria mínima (onde morre, onde para)"],"recursos":[{"titulo":"escopo-jogo-publicavel-2026-11-05.md (escopo A, fonte interna)","url":"file:///home/emporio-ferreira/Documents/FelipeBrain/50-Pessoal/carreira-jogos/escopo-jogo-publicavel-2026-11-05.md","gratuito":true,"idioma":"pt"},{"titulo":"Game Programming Patterns — State","url":"https://gameprogrammingpatterns.com/state.html","gratuito":true,"idioma":"en"}],"exercicio":"Sala 1 completa com o verbo funcionando em Unreal.","criterio":"joga 60 s sem bug bloqueante","prova":"tag v0.4-sala1"},{"id":"f3n2","titulo":"Salas 2 e 3 e ajuste de feel","tipo":"projeto","semana":"19","horas":15,"conceitos":["curva de dificuldade","coyote, buffer e hitstop como números","transição entre salas","condição de fim"],"recursos":[{"titulo":"t1-spec-2026-11-07.md (números de referência, fonte interna)","url":"file:///home/emporio-ferreira/Documents/FelipeBrain/50-Pessoal/carreira-jogos/t1-spec-2026-11-07.md","gratuito":true,"idioma":"pt"},{"titulo":"GDC (canal no YouTube) — talks de game feel (link não verificado)","url":"","gratuito":true,"idioma":"en"}],"exercicio":"3 salas encadeadas com fim definido.","criterio":"3 números de feel justificados no README","prova":"README com a tabela de números (coyote, buffer, hitstop)"},{"id":"f3n3","titulo":"Playtest 1","tipo":"projeto","semana":"20","horas":15,"conceitos":["protocolo sem instrução","observação x opinião","anotação com timestamp","onde travar é dado"],"recursos":[{"titulo":"OBS Studio (gravar a sessão)","url":"https://obsproject.com/","gratuito":true,"idioma":"pt"},{"titulo":"GDC (canal no YouTube) — talks de playtest (link não verificado)","url":"","gratuito":true,"idioma":"en"}],"exercicio":"2 pessoas jogando sem explicação prévia, sessão gravada.","criterio":"10 observações registradas com timestamp","prova":"playtest/01.md com as 10 observações"},{"id":"f3n4","titulo":"Corrigir os 3 problemas mais repetidos","tipo":"projeto","semana":"21","horas":15,"conceitos":["priorização por frequência","correção pequena x redesenho","changelog","congelamento de escopo"],"recursos":[{"titulo":"itch.io — Docs (devlog)","url":"https://itch.io/docs/","gratuito":true,"idioma":"en"}],"exercicio":"Corrigir os 3 problemas e publicar v1.0 no itch.io.","criterio":"3 correções no changelog e v1.0 publicada","prova":"tag v1.0"},{"id":"f3n5","titulo":"Portão AI: gameplay ou AI","tipo":"portao","semana":"22","horas":15,"conceitos":["gameplay x AI no dia a dia","custo de depurar comportamento","EQS, StateTree e percepção","Mass e ECS como requisito desejável","rendering fora de escopo"],"recursos":[{"titulo":"plano-programador-de-jogo.md (vagas da CDPR lidas em 16/11/2026, fonte interna)","url":"file:///home/emporio-ferreira/Documents/FelipeBrain/50-Pessoal/carreira-jogos/plano-programador-de-jogo.md","gratuito":true,"idioma":"pt"},{"titulo":"Unreal Engine — Environment Query System","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/environment-query-system-in-unreal-engine","gratuito":true,"idioma":"en"}],"exercicio":"Escrever a decisão em 1 frase com a evidência medida nas semanas 14 e 15.","criterio":"decisão escrita + 2 números que a sustentam","prova":"decisao-especialidade.md no repo de notas"},{"id":"f3n6","titulo":"Sistema novo da especialidade","tipo":"projeto","semana":"23","horas":15,"conceitos":["se AI: EQS query, StateTree, percepção afinada","se gameplay: segundo verbo com interação medida","hierarquia de estado","integração com o jogo existente"],"recursos":[{"titulo":"Unreal Engine — StateTree","url":"https://dev.epicgames.com/documentation/en-us/unreal-engine/state-tree-in-unreal-engine","gratuito":true,"idioma":"en"},{"titulo":"CppCon (canal no YouTube) — talks de AI em jogos","url":"https://www.youtube.com/@CppCon","gratuito":true,"idioma":"en"}],"exercicio":"Um sistema novo, medido, integrado ao jogo.","criterio":"demo de 30 s do sistema funcionando na build","prova":"tag v1.1 + vídeo de 30 s"},{"id":"f3n7","titulo":"Writeup técnico e 3 posts","tipo":"projeto","semana":"24","horas":15,"conceitos":["estrutura de writeup: problema, medição, solução, resultado","gráfico antes x depois","devlog curto","README como porta de entrada"],"recursos":[{"titulo":"itch.io — Docs (devlog)","url":"https://itch.io/docs/","gratuito":true,"idioma":"en"},{"titulo":"kit-avaliacao-estudios.md (fonte interna)","url":"file:///home/emporio-ferreira/Documents/FelipeBrain/50-Pessoal/carreira-jogos/kit-avaliacao-estudios.md","gratuito":true,"idioma":"pt"}],"exercicio":"1 writeup técnico e 3 posts de devlog.","criterio":"writeup com ≥3 números medidos e 3 posts publicados","prova":"writeup/ em Markdown + link no README raiz"}]},{"id":"f4","titulo":"Fase 4 — candidatura","semanas":"25-26","objetivo":"Montar o pacote que o recrutador olha, aplicar em co-dev/port e fechar o ciclo com número.","porque":"Aplicar antes do pacote pronto gasta a única primeira impressão que ele tem, e sem medir a taxa de resposta o ciclo 2 repete o erro.","nos":[{"id":"f4n1","titulo":"Pacote de candidatura e aplicação","tipo":"projeto","semana":"25","horas":15,"conceitos":["ordem do pacote: build jogável, vídeo 60 s, README, writeup, demo reel","CV de uma página","mensagem de abordagem curta","co-dev e port como alvo realista","registro de candidatura"],"recursos":[{"titulo":"kit-avaliacao-estudios.md (fonte interna)","url":"file:///home/emporio-ferreira/Documents/FelipeBrain/50-Pessoal/carreira-jogos/kit-avaliacao-estudios.md","gratuito":true,"idioma":"pt"},{"titulo":"empresas-alvo-games.md (fonte interna)","url":"file:///home/emporio-ferreira/Documents/FelipeBrain/50-Pessoal/carreira-jogos/empresas-alvo-games.md","gratuito":true,"idioma":"pt"}],"exercicio":"Montar o pacote e aplicar em 10 vagas de co-dev/port + 10 contatos.","criterio":"20 candidaturas registradas em planilha com data e URL","prova":"repo portfolio com o pacote linkado"},{"id":"f4n2","titulo":"Inglês técnico de entrevista","tipo":"ferramenta","semana":"25","horas":5,"conceitos":["declarar B2 até prova contrária (pergunta 64 aberta; CV diz avançado, LinkedIn diz intermediário)","descrever sistema no passado","explicar trade-off","falar de número em inglês","perguntas de comportamento","vocabulário de engine"],"recursos":[{"titulo":"Writeup próprio traduzido para inglês (material interno)","url":"","gratuito":true,"idioma":"en"},{"titulo":"Conversação com falante nativo gratuito (nome genérico, link não verificado)","url":"","gratuito":true,"idioma":"en"}],"exercicio":"Gravar 3 respostas de 2 min em inglês sobre o próprio projeto e ouvir de volta.","criterio":"3 gravações de 2 min sem ler script + 1 entrevista simulada gravada","prova":"ingles/README.md com transcrição e lista de correções"},{"id":"f4n3","titulo":"Revisão do ciclo","tipo":"projeto","semana":"26","horas":10,"conceitos":["o que reprovou em cada portão","taxa de resposta das 20 candidaturas","custo real em horas","o que o ciclo 2 muda"],"recursos":[{"titulo":"Registros 90-Sistema/registros/2026-11.md e 2026-12.md (fonte interna)","url":"file:///home/emporio-ferreira/Documents/FelipeBrain/90-Sistema/registros/2026-11.md","gratuito":true,"idioma":"pt"}],"exercicio":"Escrever o plano do ciclo 2 com 4 portões novos.","criterio":"taxa de resposta calculada (respostas dividido por 20) + plano do ciclo 2 escrito","prova":"ciclo2.md no repo de notas"}]}]};
+const LABEL = {fundamento:"fundamento",ferramenta:"ferramenta",projeto:"projeto",portao:"portão"};
+const TAGC = {fundamento:"t-fund",ferramenta:"t-ferr",projeto:"t-proj",portao:"t-port"};
+const KEY = "roadmap-games-v2";
 let done = {};
-try{ done = JSON.parse(localStorage.getItem(KEY) || "{}"); }catch(e){ done = {}; }
+try { done = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { done = {}; }
 
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+const md = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>");
 const app = document.getElementById("app");
-FASES.forEach(f=>{
+
+DATA.fases.forEach(f => {
   const sec = document.createElement("section");
   sec.id = f.id;
-  const nos = f.nos.map(n=>`
-    <div class="no ${done[n.id]?'done':''}" data-id="${n.id}">
+  const nos = f.nos.map(n => {
+    const rec = n.recursos.map(r => r.url
+      ? `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.titulo)}</a>${r.idioma ? " · " + esc(r.idioma) : ""}</li>`
+      : `<li>${esc(r.titulo)} <em>· link não verificado</em></li>`).join("");
+    return `<div class="no ${done[n.id]?"done":""}" data-id="${n.id}">
       <details>
         <summary>
-          <span class="ck ${done[n.id]?'on':''}"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>
-          <span class="st"><b>${n.titulo}</b><small>${n.semana && n.semana!=="0" ? "semana "+n.semana+" · " : ""}${typeof n.horas==="number" ? n.horas+" h" : n.horas}</small></span>
-          <span class="tag ${TAGC[n.tipo]||'t-fund'}">${LABEL[n.tipo]||n.tipo}</span>
+          <span class="ck ${done[n.id]?"on":""}"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>
+          <span class="st"><b>${md(n.titulo)}</b><small>semana ${esc(n.semana)} · ${esc(n.horas)} h</small></span>
+          <span class="tag ${TAGC[n.tipo]||"t-fund"}">${LABEL[n.tipo]||esc(n.tipo)}</span>
         </summary>
         <div class="body">
           <div class="grid">
-            <div>
-              <h4>conceitos</h4>
-              <ul>${n.conceitos.map(c=>`<li>${c}</li>`).join("")}</ul>
-            </div>
-            <div>
-              <h4>estudar com</h4>
-              <ul>${n.recursos.map(r=> r.u ? `<li><a href="${r.u}" target="_blank" rel="noopener">${r.t}</a>${r.idioma?` · ${r.idioma}`:""}</li>` : `<li>${r.t} <em>· link não verificado</em></li>`).join("")}</ul>
-            </div>
+            <div><h4>conceitos</h4><ul>${n.conceitos.map(c=>`<li>${md(c)}</li>`).join("")}</ul></div>
+            <div><h4>estudar com</h4><ul>${rec}</ul></div>
           </div>
-          <div class="crit"><b>pronto em número</b>${n.criterio}</div>
-          <div class="prova"><b>prova</b>${n.prova}</div>
+          <div class="box ex"><b>exercício</b>${md(n.exercicio)}</div>
+          <div class="box crit"><b>pronto em número</b>${md(n.criterio)}</div>
+          <div class="box prova"><b>prova</b>${md(n.prova)}</div>
         </div>
       </details>
-    </div>`).join("");
-  sec.innerHTML = `<div class="fase-top"><h2>${f.titulo}</h2><span class="sem">${f.semanas}</span></div>
-    <p class="obj"><b>${f.objetivo}</b><br>${f.porque}</p>
+    </div>`;
+  }).join("");
+  sec.innerHTML = `<div class="fase-top"><h2>${esc(f.titulo)}</h2><span class="sem">semanas ${esc(f.semanas)}</span></div>
+    <p class="obj"><b>${esc(f.objetivo)}</b><br>${esc(f.porque)}</p>
     <div class="trilha">${nos}</div>`;
   app.appendChild(sec);
 });
 
-const total = FASES.reduce((a,f)=>a+f.nos.length,0);
-function paint(){
+const total = DATA.fases.reduce((a,f)=>a+f.nos.length,0);
+function paint() {
   const n = Object.values(done).filter(Boolean).length;
-  document.getElementById("bar").style.width = (n/total*100).toFixed(1)+"%";
-  document.getElementById("pct").textContent = n+" / "+total+" ("+Math.round(n/total*100)+"%)";
+  document.getElementById("bar").style.width = (n/total*100).toFixed(1) + "%";
+  document.getElementById("pct").textContent = n + " / " + total + " (" + Math.round(n/total*100) + "%)";
 }
-document.addEventListener("click",e=>{
+document.addEventListener("click", e => {
   const ck = e.target.closest(".ck");
-  if(ck){
-    e.preventDefault(); e.stopPropagation();
-    const box = ck.closest(".no");
-    const id = box.dataset.id;
-    done[id] = !done[id];
-    ck.classList.toggle("on", !!done[id]);
-    box.classList.toggle("done", !!done[id]);
-    localStorage.setItem(KEY, JSON.stringify(done));
-    paint();
-  }
+  if (!ck) return;
+  e.preventDefault(); e.stopPropagation();
+  const box = ck.closest(".no"), id = box.dataset.id;
+  done[id] = !done[id];
+  ck.classList.toggle("on", !!done[id]);
+  box.classList.toggle("done", !!done[id]);
+  localStorage.setItem(KEY, JSON.stringify(done));
+  paint();
 });
-document.getElementById("reset").addEventListener("click",()=>{
-  done = {}; localStorage.setItem(KEY,"{}");
-  document.querySelectorAll(".no").forEach(b=>{b.classList.remove("done"); b.querySelector(".ck").classList.remove("on");});
+document.getElementById("reset").addEventListener("click", () => {
+  done = {}; localStorage.setItem(KEY, "{}");
+  document.querySelectorAll(".no").forEach(b => { b.classList.remove("done"); b.querySelector(".ck").classList.remove("on"); });
   paint();
 });
 paint();
